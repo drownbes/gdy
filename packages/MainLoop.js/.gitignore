@@ -19,3 +19,6 @@ Icon
 
 #
 compiled
+
+dist/
+./examples/planets/demo.js
