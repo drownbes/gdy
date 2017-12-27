@@ -37,21 +37,23 @@ export default class MainLoop {
   private running: boolean = false;
   private started: boolean = false;
   private panic: boolean = false;
-  private begin: BeginCallbackType = NOOP;
-  private update: UpdateCallbackType = NOOP;
-  private draw: DrawCallbackType = NOOP;
-  private end: EndCallbackType = NOOP;
+  private begin: BeginCallbackType;
+  private update: UpdateCallbackType;
+  private draw: DrawCallbackType;
+  private end: EndCallbackType;
   private rafHandle: number;
 
 
-  constructor({update, draw, end} : {
-    update: UpdateCallbackType,
-    draw: DrawCallbackType,
-    end: EndCallbackType
+  constructor({update = NOOP, draw = NOOP, end = NOOP, begin = NOOP} : {
+    update?: UpdateCallbackType,
+    draw?: DrawCallbackType,
+    end?: EndCallbackType,
+    begin?: BeginCallbackType
   }) {
     this.update = update;
     this.draw = draw;
     this.end = end;
+    this.begin = begin;
   }
 
   public setMaxAllowedFPS(fps: number) {

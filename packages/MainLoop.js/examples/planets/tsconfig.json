@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "module": "ESNext",
+    "lib": ["es6", "dom"],
+    "strict": true,
+    "moduleResolution": "node"
+  },
+  "files": ["./demo.ts"]
+}

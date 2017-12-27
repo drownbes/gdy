@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "target": "ESNEXT",
-    "module": "ESNext",
+    "module": "ESNEXT",
     "lib": ["es6", "dom"],
     "strict": true,
     "moduleResolution": "node"
   },
-  "files": ["./planets/demo.ts"]
+  "files": ["./cli.ts"]
 }

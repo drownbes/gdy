@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node ./node_modules/typescript/bin/tsc --declaration",
-    "build:demo": "cd examples && node ../node_modules/typescript/bin/tsc",
-    "demo":  "cd examples && node serve.js"
+    "mjs": "cp dist/mainloop.js dist/mainloop.mjs",
+    "build": "node ./node_modules/typescript/bin/tsc --declaration && npm run mjs",
+    "build:examples:planets": "cd examples && node ../node_modules/typescript/bin/tsc -p planets",
+    "build:examples:cli": "cd examples && node ../node_modules/typescript/bin/tsc -p cli && cp cli/cli.js cli/cli.mjs",
+    "examples:planets":  "cd examples && node serve.js",
+    "examples:cli":  "cd examples/cli && node --experimental-modules cli.mjs",
+    "clean": "rm examples/*/*.{mjs,js}; rm dist/**"
   },
   "repository": {
     "type": "git",

@@ -21,4 +21,5 @@ Icon
 compiled
 
 dist/
-./examples/planets/demo.js
+examples/*/*.js
+examples/*/*.mjs
