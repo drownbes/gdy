@@ -2,7 +2,8 @@
   "name": "MainLoop.js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/mainloop.js",
+  "types": "./dist/mainloop.d.ts",
   "scripts": {
     "mjs": "cp dist/mainloop.js dist/mainloop.mjs",
     "build": "node ./node_modules/typescript/bin/tsc --declaration && npm run mjs",
@@ -10,7 +11,8 @@
     "build:examples:cli": "cd examples && node ../node_modules/typescript/bin/tsc -p cli && cp cli/cli.js cli/cli.mjs",
     "examples:planets":  "cd examples && node serve.js",
     "examples:cli":  "cd examples/cli && node --experimental-modules cli.mjs",
-    "clean": "rm examples/*/*.{mjs,js}; rm dist/**"
+    "clean": "rm examples/*/*.{mjs,js}; rm dist/**",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
